@@ -1,9 +1,25 @@
 body {
 	text-align: center;
 }
+
 h1 {
 	text-transform: uppercase;
 }
-p.question {
-	color: blue;
+
+form {
+	border: 1px black solid;
+}
+
+.correct,
+.incorrect,
+.done {
+	border: 1px black solid;
+}
+
+.correct {
+	color: green;
+}
+
+.incorrect {
+	color: red;
 }

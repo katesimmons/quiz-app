@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*--$(document).ready(function() {
 
 var question = {
   questionNumber: "1" + ".  ",
@@ -11,4 +11,4 @@ var question = {
 
 question.buildQuestion();
 
-});
+});--*/
