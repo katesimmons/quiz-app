@@ -14,12 +14,27 @@ question.buildQuestion();
 });--*/
 $(document).ready(function() {
 
+/*----variables----*/
+var questionCount = 1;
+
+/*----function to update question count----*/
+function setCount() {
+	$('.questionNumber').text(questionCount);
+}
+
+
+
+
+
+/*----MODAL FADE IN AND OUT-----*/
 	$('.submitQuestion').click(function() {
 		$('#modal').fadeIn(1000);
 	});
 
     $('.ok').click(function() {
     	$('#modal').fadeOut(1000);
+    	questionCount++;
+    	setCount(questionCount);
     });
 
 });
