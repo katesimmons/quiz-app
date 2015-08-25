@@ -1,4 +1,4 @@
-/*--$(document).ready(function() {
+/*--
 
 var question = {
   questionNumber: "1" + ".  ",
@@ -10,31 +10,30 @@ var question = {
 }
 
 question.buildQuestion();
+--*/
 
-});--*/
 $(document).ready(function() {
 
-/*----variables----*/
-var questionCount = 1;
+/*----VARIABLES----*/
+    var questionCount = 1;
+    var done = false;
 
-/*----function to update question count----*/
-function setCount() {
-	$('.questionNumber').text(questionCount);
-}
-
-
-
-
+/*----FUNCTION TO UPDATE QUESTION COUNT----*/
+    function setCount() {
+	    $('.questionNumber').text(questionCount);
+    }
 
 /*----MODAL FADE IN AND OUT-----*/
 	$('.submitQuestion').click(function() {
 		$('#modal').fadeIn(1000);
+		// need to add logic here about correct / incorrect
 	});
 
     $('.ok').click(function() {
     	$('#modal').fadeOut(1000);
     	questionCount++;
     	setCount(questionCount);
+    	//need to call the call for the next question IF current question number is not 3, else call DONE modal
     });
 
 });
