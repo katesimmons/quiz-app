@@ -12,3 +12,14 @@ var question = {
 question.buildQuestion();
 
 });--*/
+$(document).ready(function() {
+
+	$('.submitQuestion').click(function() {
+		$('#modal').fadeIn(1000);
+	});
+
+    $('.ok').click(function() {
+    	$('#modal').fadeOut(1000);
+    });
+
+});

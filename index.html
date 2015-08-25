@@ -8,12 +8,12 @@
 	<script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
+
 <header>
 	<h1>Quiz</h1>
 	<p>This is a very simple quiz.</p>
+	<p class="counter">Question <span class="questionNumber">1</span> of 3</p>
 </header>
-
-<section>Counter goes here</section>
 
 <section>
 
@@ -25,10 +25,10 @@
 	<br>
 	<input type="radio" name="color" value="yellow">Yellow
 	<br><br>
-	<button type="button" class="button">Submit</button>
+	<button type="button" class="submitQuestion">Submit</button>
 </form>
 
-<form>
+<!--<form>
 	<p>What color is the grass?</p>
 	<input type="radio" name="color" value="blue">Blue
 	<br>
@@ -48,26 +48,31 @@
 	<input type="radio" name="color" value="yellow">Yellow
 	<br><br>
 	<button type="button" class="button">Submit</button>
-</form>
+</form>-->
 
 </section>
 
 <!--CORRECT modal-->
-    <div class="correct" id="modal">
-    	<h2>Correct!</h2>
-    	<button type="button" class="ok">OK</button>
+    <div id="modal">
+        <div class="correct">
+    	    <h2>Correct!</h2>
+    	    <button type="button" class="ok">OK</button>
+        </div>
     </div>
-
 <!--INCORRECT modal-->
-    <div class="incorrect" id="modal">
-    	<h2>Incorrect!</h2>
-    	<button type="button" class="ok">OK</button>
-    </div>
+<!--    <div id="modal">
+        <div class="incorrect">
+    	    <h2>Incorrect!</h2>
+    	    <button type="button" class="ok">OK</button>
+    	</div>
+    </div>-->
 <!--THE END modal-->
-    <div class="done" id="modal">
-    	<h2>Done!!</h2>
-    	<button type="button" class="ok">Start Over</button>
-    </div>
+<!--    <div id="modal">
+    	<div class="done">
+    	    <h2>Done!!</h2>
+    	    <button type="button" class="ok">Start Over</button>
+    	</div>
+    </div>-->
 
 </body>
 </html>
