@@ -24,7 +24,6 @@ var question = {
 }
 
 question.buildQuestion();
-//^ this is working//
 
 //second question
 var question2 = Object.create(question);
