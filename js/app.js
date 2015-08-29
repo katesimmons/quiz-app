@@ -18,12 +18,30 @@ var question = {
 	buildQuestion: function() {
 		$('.question').append(this.questionText);
 		for(var i=0; i<this.questionAnswers.length; i++) {
-			$('.answers').append("<li><input type='radio' name='" +	this.questionText + "' value='" + this.questionAnswers[i] + "'>" + this.questionAnswers[i] + "'</li>");
+			$('.answers').append("<li><input type='radio' name='" +	this.questionText + "' value='" + this.questionAnswers[i] + "'>" + this.questionAnswers[i] + "</li>");
 		}
 	}
 }
 
 question.buildQuestion();
+//^ this is working//
+
+//second question
+var question2 = Object.create(question);
+
+question2.questionText = "What is the color of the grass?";
+question2.questionAnswers = ["Purple", "Black", "Green"];
+
+question2.buildQuestion();
+
+//third and final question
+var question3 = Object.create(question);
+
+question3.questionText = "What color is the ocean?";
+question3.questionAnswers = ["Blue", "Orange", "White"];
+
+question3.buildQuestion();
+
 
 /*----MODAL FADE IN AND OUT-----*/
 	$('.submitQuestion').click(function() {
