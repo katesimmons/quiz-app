@@ -18,7 +18,7 @@ var question = {
 	buildQuestion: function() {
 		$('.question').append(this.questionText);
 		for(var i=0; i<this.questionAnswers.length; i++) {
-			$('.answers').append("<input type='radio' name='" +	this.questionText + "' value='" + this.questionAnswers[i] + "'>" + this.questionAnswers[i] + "'<br>");
+			$('.answers').append("<li><input type='radio' name='" +	this.questionText + "' value='" + this.questionAnswers[i] + "'>" + this.questionAnswers[i] + "'</li>");
 		}
 	}
 }
