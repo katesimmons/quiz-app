@@ -8,6 +8,22 @@ $(document).ready(function() {
     function setCount() {
 	    $('.questionNumber').text(questionCount);
     }
+//may need to cap this at 3, might need additional logic.
+
+
+/*----QUESTIONS AND ANSWERS-----*/
+var question = {
+	questionText: "What color is the sky?",
+	questionAnswers: ["Blue", "Green", "Yellow"],
+	buildQuestion: function() {
+		$('.question').append(this.questionText);
+		for(var i=0; i<this.questionAnswers.length; i++) {
+			$('.answers').append("<input type='radio' name='" +	this.questionText + "' value='" + this.questionAnswers[i] + "'>" + this.questionAnswers[i] + "'<br>");
+		}
+	}
+}
+
+question.buildQuestion();
 
 /*----MODAL FADE IN AND OUT-----*/
 	$('.submitQuestion').click(function() {
