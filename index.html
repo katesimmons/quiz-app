@@ -9,41 +9,17 @@
 </head>
 <body>
 
-<header>
-	<h1>Quiz</h1>
-	<p>This is a very simple quiz.</p>
-	<p class="counter">Question <span class="questionNumber">1</span> of 3</p>
-</header>
+<h1>Quiz</h1>
 
-<section>
-
-<label class="question"></label>
-<ul class="answers"></ul>
-
-<button type="button" class="submitQuestion">Submit</button>
-
-</section>
-
-<!--CORRECT modal-->
-    <div id="modal">
-        <div class="correct">
-    	    <h2>Correct!</h2>
-    	    <button type="button" class="ok">OK</button>
-        </div>
-    </div>
-<!--INCORRECT modal-->
-<div id="modal">
-        <div class="incorrect">
-    	    <h2>Incorrect!</h2>
-    	    <button type="button" class="ok">OK</button>
-    	</div>
-    </div>
-<!--THE END modal-->
-<div id="modal">
-    	<div class="done">
-    	    <h2>Done!!</h2>
-    	    <button type="button" class="ok">Start Over</button>
-    	</div>
+<div id="questionDiv">
+    <label class="question"></label>
+    <ul class="answers"></ul>
+    <button id="next">Submit</button>
+    <p class="goodFeedback"></p>
+    <p class="badFeedback"></p>
+</div>
+<div id="scoreDiv">
+    <p class="score"></p>
 </div>
 
 </body>

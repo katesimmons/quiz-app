@@ -1,58 +1,58 @@
 $(document).ready(function() {
 
-/*----VARIABLES----*/
-    var questionCount = 1;
-    var done = false;
+questionArray = [{
+    q: "1/3: What color is the sky?",
+    a: ["Blue", "Yellow", "Green"],
+    correct: "Blue"
+}, {
+    q: "2/3: What color is the grass?",
+    a: ["Orange", "Green", "Purple"],
+    correct: "Green"
+}, {
+    q: "3/3: What color is the sun?",
+    a: ["White", "Black", "Yellow"],
+    correct: "Yellow"
+}];
 
-/*----FUNCTION TO UPDATE QUESTION COUNT----*/
-    function setCount() {
-	    $('.questionNumber').text(questionCount);
+currentQuestion = 0;
+correctCount = 0;
+incorrectCount = 0;
+
+function nextQuestion() {
+    $(".question").text(questionArray[currentQuestion].q);
+    $(".answers").empty();
+    for (var i = 0; i < (questionArray[currentQuestion].a).length; i++) {
+        $(".answers").append("<li><input type='radio' name='" + questionArray[currentQuestion].q + "' value='" + questionArray[currentQuestion].a[i] + "'>" + questionArray[currentQuestion].a[i] + "</li>");
     }
-//may need to cap this at 3, might need additional logic.
-
-
-/*----QUESTIONS AND ANSWERS-----*/
-var question = {
-	questionText: "What color is the sky?",
-	questionAnswers: ["Blue", "Green", "Yellow"],
-	buildQuestion: function() {
-		$('.question').append(this.questionText);
-		for(var i=0; i<this.questionAnswers.length; i++) {
-			$('.answers').append("<li><input type='radio' name='" +	this.questionText + "' value='" + this.questionAnswers[i] + "'>" + this.questionAnswers[i] + "</li>");
-		}
-	}
 }
 
-question.buildQuestion();
+nextQuestion();
 
-//second question
-var question2 = Object.create(question);
+$("#next").click(function () {
+    //answer checking logic
+    //    console.log(questionArray[currentQuestion].correct);
+    //    console.log($('input:checked').val());
+ 
+    if (questionArray[currentQuestion].correct === $('input:checked').val()) {
+        correctCount++;
+        console.log("Right answers: " + (correctCount));
+        $('.goodFeedback').text("Your last answer was correct!");
+        $('.badFeedback').empty();
+        $('.score').text("Correct: " + (correctCount) + ". Incorrect: " + (incorrectCount) + ".");
+    } else {
+        incorrectCount++;
+        console.log("Wrong answers: " + (incorrectCount));
+        console.log(incorrectCount);
+        $('.badFeedback').text("Uh-oh, your last answer was incorrect.");
+        $('.goodFeedback').empty();
+        $('.score').text("Correct: " + (correctCount) + ". Incorrect: " + (incorrectCount) + ".");
+    }
+    currentQuestion++;
+    nextQuestion();
+});
 
-question2.questionText = "What is the color of the grass?";
-question2.questionAnswers = ["Purple", "Black", "Green"];
-
-question2.buildQuestion();
-
-//third and final question
-var question3 = Object.create(question);
-
-question3.questionText = "What color is the ocean?";
-question3.questionAnswers = ["Blue", "Orange", "White"];
-
-question3.buildQuestion();
-
-
-/*----MODAL FADE IN AND OUT-----*/
-	$('.submitQuestion').click(function() {
-		$('#modal').fadeIn(1000);
-		// need to add logic here about correct / incorrect
-	});
-
-    $('.ok').click(function() {
-    	$('#modal').fadeOut(1000);
-    	questionCount++;
-    	setCount(questionCount);
-    	//need to call the call for the next question IF current question number is not 3, else call DONE modal
-    });
+//additional tweaks: 
+//how to disallow moving forward if nothing has been selected; 
+//how to hide questions div when the game is over and show DONE message instead
 
 });
